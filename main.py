@@ -1,5 +1,4 @@
 from PIL import Image
-from operator import attrgetter
 
 
 class Block:
@@ -54,10 +53,7 @@ outside, inside = get_blocks_in_sphere(radius_of_sphere)
 print(f"Blocks inside:{len(inside)}, Blocks outside:{len(outside)}")
 
 
-# Create template for block in image
-block_img = Image.open("block_template.png", "r")
-
-# Save images
+# Save each layer as an image
 for layer in range(radius_of_sphere*2):
     current_layer_of_blocks = []
     for block in inside:
